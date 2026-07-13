@@ -228,7 +228,8 @@ export function useGame<T extends BaseChallenge>(
 
       setState((prev) => {
         if (!prev || prev.answers[challengeId]) return prev;
-        const newStreak = isCorrect ? prev.streak + 1 : 0;
+        const newStreak = isCorrect ? prev.streak + 1 : prev.streak;
+
 
         return {
           ...prev,
@@ -236,14 +237,13 @@ export function useGame<T extends BaseChallenge>(
           streak: newStreak,
           bestStreak: Math.max(prev.bestStreak, newStreak),
           thinkingTimeSec: prev.thinkingTimeSec + timeSec,
-          // CREATED BUG - "UNCOMENT" TO MAKE IT WORK
-          // answers: {
-          //   ...prev.answers,
-          //   [challengeId]: {
-          //     result: isCorrect ? "correct" : "wrong",
-          //     side,
-          //   },
-          // },
+          answers: {
+            ...prev.answers,
+            [challengeId]: {
+              result: isCorrect ? "correct" : "wrong",
+              side,
+            },
+          },
         };
       });
     },
