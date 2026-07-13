@@ -1,0 +1,53 @@
+{
+  "name": "cant",
+  "private": true,
+  "scripts": {
+    "dev": "turbo dev",
+    "dev:maintain": "turbo dev --filter=cant-maintain",
+    "dev:resize": "turbo dev --filter=cant-resize",
+    "dev:type": "turbo dev --filter=cant-type",
+    "dev:orchestrate": "turbo dev --filter=cant-orchestrate",
+    "dev:seo": "turbo dev --filter=cant-seo",
+    "dev:ux": "turbo dev --filter=cant-ux",
+    "dev:hub": "turbo dev --filter=cant-hub",
+    "dev:explode": "turbo dev --filter=cant-explode",
+    "dev:branch": "turbo dev --filter=cant-branch",
+    "dev:query": "turbo dev --filter=cant-query",
+    "dev:test": "turbo dev --filter=cant-test",
+    "dev:game": "turbo dev --filter=cant-game",
+    "dev:ticket": "turbo dev --filter=cant-ticket",
+    "build": "turbo build",
+    "build:maintain": "turbo build --filter=cant-maintain",
+    "build:resize": "turbo build --filter=cant-resize",
+    "build:type": "turbo build --filter=cant-type",
+    "build:orchestrate": "turbo build --filter=cant-orchestrate",
+    "build:seo": "turbo build --filter=cant-seo",
+    "build:ux": "turbo build --filter=cant-ux",
+    "build:hub": "turbo build --filter=cant-hub",
+    "build:explode": "turbo build --filter=cant-explode",
+    "build:branch": "turbo build --filter=cant-branch",
+    "build:query": "turbo build --filter=cant-query",
+    "build:test": "turbo build --filter=cant-test",
+    "build:game": "turbo build --filter=cant-game",
+    "build:ticket": "turbo build --filter=cant-ticket",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck",
+    "test": "turbo test",
+    "format": "prettier --write .",
+    "format:check": "turbo format:check",
+    "check": "turbo run lint typecheck test format:check --continue",
+    "clean": "rimraf --glob .turbo \"apps/*/.next\" \"apps/*/.turbo\" \"apps/*/tsconfig.tsbuildinfo\" \"packages/*/.turbo\" \"packages/*/storybook-static\"",
+    "storybook": "pnpm --filter @cant/shared storybook",
+    "build-storybook": "pnpm --filter @cant/shared build-storybook"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.1",
+    "rimraf": "^6.0.1",
+    "turbo": "^2.5.4"
+  },
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=10.20.0"
+  },
+  "packageManager": "pnpm@10.20.0"
+}
