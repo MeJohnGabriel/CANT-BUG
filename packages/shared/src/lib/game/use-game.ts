@@ -228,6 +228,7 @@ export function useGame<T extends BaseChallenge>(
 
       setState((prev) => {
         if (!prev || prev.answers[challengeId]) return prev;
+        // const newStreak = isCorrect ? prev.streak + 1 : 0; 
         const newStreak = isCorrect ? prev.streak + 1 : prev.streak;
 
 
